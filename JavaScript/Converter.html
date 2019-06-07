@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+</head>
+<body>
+<div id='container'>
+</div>
+<div>
+    <form id="form1" action="" method="post">
+        <label>Converter Type: </label><br>
+        <input type = "radio" id="FtoC" name="converter" value="FtoC"><label for="FtoC">Fahrenheit to Celsius</label><br>
+        <input type = "radio" id="CtoF" name="converter" value="CtoF"><label for="CtoF">Celsius to Fahrenheit</label><br>
+
+        <input type="number" id="input" name="input" placeholder="input"><br>
+
+    </form>
+
+    <button id="myBtn" onclick="determineConverter()">Convert</button>
+    <p id="output"></p><br>
+
+</div>
+<script src="converter.js"></script>
+</body>
+</html>

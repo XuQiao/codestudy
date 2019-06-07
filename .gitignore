@@ -1,0 +1,91 @@
+*.caffemodel
+*.pyc
+python/style-transfer/outputs/*
+!python/style-transfer/outputs/.gitkeeper
+python/style-transfer/test/*
+.ipynb_checkpoints/
+*.DS_Store
+*.pkl
+*.csv
+*.json
+*.numbers
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.d
+*.slo
+*.lo
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+#
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+#
+
+# Executables
+*.exe
+*.out
+*.app
+*.stdout
+*.stderr
+
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.tmp
+*.sql
+*.sqlite
+*.sav
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ROOT files #
+# ####################
+*.root
+
+# Figures #
+# ####################
+*.png
+*.pdf
+*.gif
+*.jpg
+*.ps
+
+# Others #
+# ####################
+*.txt

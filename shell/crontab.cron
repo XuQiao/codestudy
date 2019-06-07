@@ -1,0 +1,2 @@
+MAIL=""
+00 00 * * 0 /home/codestudy/shell/pushgit.sh

@@ -1,0 +1,6 @@
+zoo = ('wolf','elephant','penguin')
+print ('the number of animals in the zoo is',len(zoo))
+new_zoo = (zoo,'monkey')
+print (new_zoo)
+print (new_zoo[0])
+print (new_zoo[0][2])

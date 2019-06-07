@@ -1,0 +1,2 @@
+MAILTO=qiao.xu@vanderbilt.edu
+0 0 * * *     cd ~/HI/ && git add . && git commit -m 'echo `date`' &&  git push origin master

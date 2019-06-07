@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <style>#map_4d5e909f22854b1aaee83fa876924557 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+     <div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 300px; height: 30px; 
+     border:2px solid grey; z-index:19999; font-size:14px;
+     background-color: yellow
+     "> <i> 1/1: # of Members / # of Schools </i>
+      </div>
+     
+    
+    <div class="folium-map" id="map_4d5e909f22854b1aaee83fa876924557" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_4d5e909f22854b1aaee83fa876924557 = L.map(
+        'map_4d5e909f22854b1aaee83fa876924557', {
+        center: [38.21965600633914, -41.5966495118859],
+        zoom: 2,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_36f695b1cc9940788c016817d428c02d = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "subdomains": "abc"
+}).addTo(map_4d5e909f22854b1aaee83fa876924557);
+    
+(function(){
+    var data = [[41.7890569, -87.59556040000002, 6, 'The University of Chicago Booth School of Business'], [40.8075355, -73.96257270000002, 81, 'Columbia University'], [47.7510741, -120.7401385, 2, 'University of Washington'], [31.821994, 117.28059, 38, 'University of Science and Technology of China'], [42.7311521, -73.68326189999998, 6, 'Rensselaer Lally School of Management'], [41.81882150000001, -71.4087208, 2, 'Warren Alpert Medical School of Brown University'], [33.450979600000004, -112.0656913, 4, 'Arizona State University'], [37.3043461, -122.0313142, 2, 'Columbia University in the City of New York'], [43.0391534, -76.1351158, 2, 'Syracuse University'], [35.7846633, -78.6820946, 2, 'North Carolina State University'], [40.9123761, -73.12338890000002, 39, 'Stony Brook University'], [30.4033015, -91.17235809999998, 3, 'Louisiana State University'], [32.774539000000004, -97.4249756, 2, 'Columbia University'], [42.0266187, -93.6464654, 3, 'Iowa State University'], [38.9869183, -76.9425543, 4, 'University of Maryland'], [26.668668, -80.63267499999998, 2, 'University of Florida'], [42.4534492, -76.4735027, 17, 'Cornell University'], [44.8019686, -68.77170930000001, 2, 'University of Maine System'], [38.9286572, -94.8428753, 2, 'Kansas State University'], [40.5008186, -74.44739910000001, 6, 'Rutgers University'], [40.738754, -73.98222700000002, 5, 'School of Visual Arts'], [29.7173941, -95.4018312, 10, 'Rice University'], [40.3439888, -74.6514481, 16, 'Princeton University'], [52.2042666, 0.1149085, 2, 'University Of Cambridge'], [34.0223519, -118.285117, 9, 'University of Southern California'], [38.534634, -121.748777, 4, 'University of California Davis (Ucd): Mondavi Center Ticket Office'], [40.8172349, -73.5900738, 2, 'Long Island University'], [39.986913, 116.3058739, 57, 'Peking University'], [40.4443533, -79.960835, 2, 'University of Pittsburgh'], [30.5360485, 114.3643219, 10, 'Wuhan University'], [40.1019523, -88.2271615, 10, 'University of Illinois at Urbana-Champaign'], [41.873522, -87.624533, 1, 'Columbia University in the City of New York'], [42.2780436, -83.7382241, 1, 'University of Michigan'], [40.523317, -74.440951, 2, 'Rutgers Business School'], [22.3045719, 114.1795642, 2, 'The Hong Kong Polytechnic University'], [22.2829989, 114.1370848, 5, 'The University of Hong Kong'], [43.660131, -79.3959928, 1, 'University of Toronto Engineering Finance Association'], [40.8201966, -96.70047629999999, 1, 'University of Nebraska-Lincoln'], [42.3770029, -71.11666009999998, 3, 'Harvard University'], [36.061255, 120.335301, 1, 'Ocean University of China'], [40.7710994, -73.9852715, 8, 'Fordham University Lincoln Center'], [39.9566127, -75.18994409999998, 4, 'Drexel University'], [30.2849185, -97.7340567, 1, 'Columbia University'], [40.7230137, -73.7950346, 2, "St. John's University"], [31.48425, 120.278585, 1, 'Jiangnan University'], [24.7917849, 121.0032019, 3, 'National Chiao Tung University'], [39.9522188, -75.1932137, 1, 'University of Pennsylvania'], [39.09418900000001, -77.2013131, 1, 'University of Maryland'], [40.7982133, -77.85990840000002, 4, 'Penn State University'], [34.9815101, -101.9160676, 2, 'West Texas A&M University College of Business'], [30.662819, 104.016322, 3, 'Southwestern University of Finance and Economics （South Gate）'], [40.4268206, -86.9163078, 3, 'Purdue University'], [43.076592, -89.4124875, 2, 'University of Wisconsin-Extension'], [35.8939566, 117.9249002, 1, 'Shandong University Engineering Internship Center'], [35.9544013, -83.92945639999998, 3, 'University of Tennessee'], [42.9235134, -78.80015399999998, 1, 'NativityMiguel Middle School St. Monica Campus'], [36.0309362, -86.67398850000002, 1, 'Henry Maxwell Elementary School'], [40.169887, 116.283102, 4, 'Central University of Finance and Economics'], [37.429918, -122.1741578, 11, 'Stanford University'], [42.36551470000001, -71.1221412, 1, 'Harvard Business School'], [39.995673, 116.313261, 1, 'Guanghua School of Management'], [44.9753541, -93.2330739, 5, 'University of Minnesota - Twin Cities'], [24.432241, 118.102517, 3, 'Xiamen University Baicheng'], [25.0392158, 121.432889, 1, 'Fu Jen Catholic University Stadium'], [30.475063, 114.394079, 3, 'Zhongnan University of Economics and Law （East Gate 1）'], [30.5610376, 114.3628012, 4, 'Art College of Huazhong University of Science and Technology'], [23.16654, 113.4183327, 1, 'China'], [43.03772470000001, -71.45139809999998, 1, 'Southern New Hampshire University'], [39.964431, 116.310319, 3, 'Beijing Institute of Technology'], [35.90491220000001, -79.04691340000002, 3, 'University of North Carolina at Chapel Hill'], [35.30869470000001, -83.18472790000001, 1, 'Western Carolina University'], [1.3449604, 103.6815682, 1, 'Nanyang Avenue'], [43.7023799, -72.2881957, 1, 'Dartmouth College/Hanover Inn'], [39.13185900000001, 117.171347, 2, 'Tianjin Nankai Middle School'], [31.306594, 121.494038, 2, 'Shanghai University of Finance and Economics'], [50.93819000000001, -1.393925, 1, 'University of Southampton'], [40.9123761, -73.12338890000002, 5, 'State University of New York at Stony Brook'], [31.295575, 121.500319, 13, 'Fudan University'], [32.056151, 118.801451, 1, 'Nanjing Foreign Language School'], [30.5179264, 114.3645286, 1, 'Central China Normal University Archives Hall'], [39.1784384, -86.5133166, 2, 'Indiana University'], [30.263944, 120.123279, 16, 'Zhejiang University'], [40.4454337, -79.944772, 5, 'Tepper School of Business'], [37.8718992, -122.2585399, 5, 'University of California'], [42.360091, -71.09416, 5, 'Massachusetts Institute of Technology'], [36.6809638, 116.9734225, 3, 'Shandong University of Science and Technology （Jinan） Shengliyuan Residential Area'], [40.7404873, -73.98315670000002, 13, 'Baruch College'], [47.6541966, -122.3025904, 2, 'University of Washington'], [39.2992161, -76.59337990000002, 3, 'The Johns Hopkins University School of Medicine'], [39.67795039999999, -75.75061140000003, 2, 'University of Delaware'], [28.214157, 113.119065, 1, 'Changsha No.1 Middle School'], [39.8444563, 116.3131767, 2, 'Capital University of Economics and Business North Road West Int'], [34.068921, -118.4451811, 1, 'UCLA'], [42.3184088, -83.23320199999998, 4, 'University of Michigan- Dearborn'], [32.108763, 118.95951, 7, 'Nanjing University Xianlin Campus'], [34.0738081, -118.4436508, 1, 'UCLA Anderson School of Management'], [23.103702, 113.29947, 5, 'Sun Yat-sen University'], [40.7539143, -73.9810162, 2, 'University of Oxford North American Office'], [37.87159260000001, -122.272747, 1, 'UC Berkeley'], [41.8342251, -87.627623, 3, 'Illinois Institute of Technology: Department of Electrical and Computer Engineering'], [30.6383, 104.088295, 2, 'Sichuan University'], [40.74105529999999, -74.17320090000003, 8, 'Rutgers University - Newark Campus'], [36.0477699, 103.8585624, 1, 'Lanzhou University'], [30.531919, 117.115101, 1, 'Anqing No.1 High School (916 High School)'], [39.973592, 116.312477, 2, 'High School Affiliated to Renmin University of China (RDFZ)'], [39.6361396, -79.95593579999998, 1, 'West Virginia University'], [41.0559925, -73.5422815, 1, 'University of Connecticut-Stamford'], [33.640495200000004, -117.8442962, 2, 'University of California Irvine'], [41.8077414, -72.25398050000003, 4, 'The University of Connecticut'], [31.8371277, 117.27082649999998, 5, 'China'], [43.4722854, -80.54485759999999, 1, 'University of Waterloo'], [43.5478703, -79.66351139999998, 2, 'University of Toronto Mississauga'], [33.7756178, -84.39628499999998, 5, 'Georgia Institute of Technology'], [39.99227399999999, 116.315843, 3, 'China'], [41.2581216, -96.01071209999999, 1, 'University of Nebraska Omaha'], [41.8267718, -71.40254820000001, 2, 'Brown University'], [40.408141, 116.682386, 1, 'Graduate University of Chinese Academy of Sciences(GUCAS)'], [42.0893553, -75.96970490000002, 1, 'Binghamton University'], [1.3466323999999998, 103.8422751, 1, 'Raffles Institution Lane'], [45.840895, -0.365539, 1, 'Courcerac'], [34.1376576, -118.125269, 1, 'Caltech'], [39.10394429999999, 117.1742232, 1, 'Nankai University'], [22.552574, 114.122968, 1, 'Shenzhen Middle School （Southeast Gate）'], [40.81451420000001, 111.7087854, 2, 'Inner Mongolia Agricultural University （North Gate 1）'], [38.6487895, -90.31079620000001, 1, 'Washington University in St. Louis'], [25.0136906, 121.5406792, 1, 'National Taiwan University of Science and Technology'], [31.044932, 121.198651, 1, 'China'], [40.7286679, -73.9956593, 1, 'New York University - Courant Institute of Mathematical Sciences'], [41.600325700000006, -93.85305129999999, 1, 'Southeast University Avenue'], [45.749531, 126.633423, 2, 'Harbin Institute of Technology'], [40.9289188, -73.786694, 1, 'Fordham University - Graduate School of Business Administration'], [37.3868492, -122.060844, 1, 'Coursera.org'], [39.9158009, 116.5626714, 1, 'Beijing International Studies University （North Gate）'], [35.3070929, -80.735164, 2, 'University of North Carolina at Charlotte'], [55.94451579999999, -3.1892412999999995, 1, 'The University of Edinburgh'], [37.7823695, -122.4052901, 2, 'University of the Pacific'], [39.0559992, -94.6094334, 1, 'The University of Kansas Hospital'], [40.7235084, -73.7943198, 1, "Saint John's University - Peter J. Tobin College of Business"], [41.0927664, -73.9826657, 1, 'Cambridge University Press'], [37.869909, -122.252819, 1, 'Berkeley Law Admissions Office'], [41.3163244, -72.92234309999998, 2, 'Yale University'], [40.0029302, 116.2858499, 2, 'University of International Relations'], [1.2966426000000002, 103.7763939, 3, 'Lower Kent Ridge Road'], [40.1019523, -88.2271615, 1, '美国 Illinois'], [31.29043, 121.551957, 2, 'China'], [35.9976886, -78.93259929999998, 2, 'Duke University Road'], [43.6301146, -84.2744061, 1, 'Northwood University'], [43.0008093, -78.78896970000002, 1, 'University at Buffalo'], [35.14060449999999, -90.0303855, 1, 'The University of Tennessee Health Science Center'], [32.072145, 118.77875, 1, 'China Pharmaceutical University'], [30.617127000000004, -96.3352982, 1, 'Texas A&M University'], [34.250803000000005, 108.983693, 1, "Xi'an Jiaotong University"], [42.349605, -71.099727, 1, 'Boston University Questrom School of Business'], [33.9480053, -83.37732209999999, 2, 'The University of Georgia'], [31.590602, 120.363838, 1, 'Jiangsu Tianyi Middle School'], [48.21318549999999, 16.360050400000002, 1, 'University of Vienna'], [39.9007131, 116.2535781, 1, 'Beijing National Day School International Department (West Gate)'], [39.1974437, -96.5847249, 2, 'Kansas State University'], [38.9089441, -77.07557229999998, 3, 'Georgetown University McDonough School of Business'], [36.8236988, -76.2101189, 1, 'Bullis Place'], [40.7557727, -73.95621120000001, 1, 'Cornell Tech'], [38.8862999, 121.5319601, 2, 'Dalian University of Technology Graduate Education Building'], [30.2849185, -97.7340567, 1, 'The University of Texas at Austin'], [38.990548, -76.937251, 2, 'UNIVERSITY of MARYLAND COLLEGE PARK (Stadium Dr.) nb'], [36.1447034, -86.8026551, 3, 'Vanderbilt University'], [34.415207, -119.84789, 2, 'UCSB Bus Loop'], [32.0244099, 118.8627297, 1, 'Nanjing University of Science and Technology Comprehensive Experiment Teaching Building （Phase 2）'], [36.073102, 120.353778, 1, 'No.2 Middle School of Qingdao Shandong Branch School'], [32.7767783, 35.0231271, 1, 'Technion - Israel Institute of Technology'], [40.7050758, -74.0091604, 1, 'Fullstack Academy of Code'], [49.10219190000001, 6.215161999999999, 1, 'Georgia Tech Lorraine'], [36.112821, 120.482876, 1, 'Qingdao No.2 High School'], [26.074478, 119.296482, 1, '福州经贸高级'], [31.203459, 121.414574, 1, 'China'], [37.871005, -122.252833, 1, 'Haas School of Business: Piedmont Avenue Side'], [48.707909, 2.211936, 1, "Sentier de l'École Polytechnique"], [45.47238100000001, -122.6294262, 1, 'Southeast Reed College Place'], [40.7290549, -73.99652329999998, 1, '美国纽约大学 - 斯特恩商学院'], [41.745161, -111.8097425, 1, 'Utah State University'], [31.303981, 120.646807, 1, 'Soochow University Laundry'], [30.874115000000003, 121.905446, 1, 'Shanghai Maritime University'], [40.740562, -73.64252890000002, 1, 'NYU Winthrop Hospital'], [39.9800973, 116.3378123, 1, 'Chinese Academy of Sciences Beijing Branch'], [40.72951339999999, -73.9964609, 1, 'United States'], [32.390305, 119.429664, 1, 'Yangzhou High School of Jiangsu Province'], [42.31809570000001, -72.63723409999999, 1, 'Smith College'], [33.3767049, -79.1502043, 1, 'Summer Haven Court'], [30.559464, 104.041564, 1, 'Chengdu No.7 High School Hi-tech Campus （West Gate）'], [40.7179842, -74.0138707, 2, 'Stuyvesant High School'], [43.6653357, -79.39837109999998, 1, 'Rotman School of Management'], [42.3770029, -71.11666009999998, 1, '美国 Massachusetts'], [41.74342, 123.233549, 1, 'Shenyang University of Chemical Technology'], [37.946462, 109.293881, 1, 'Huaiyang Middle School']];
+    var map = map_4d5e909f22854b1aaee83fa876924557;
+    var callback_cluster = function () {var cluster = L.markerClusterGroup({iconCreateFunction: function(cluster) {var childCount = cluster.getChildCount();var allchildmarkers = cluster.getAllChildMarkers();var totalweight = 0;for (var i = 0; i < childCount; i++) {var popup = allchildmarkers[i].getPopup();totalweight += parseInt(popup.getContent().substr(19));}var c = " marker-cluster-";if (childCount < 10) {c += "small";} else if (childCount < 100) {c += "medium";} else {c += "large";};return new L.DivIcon({ html: "<div><span><font size=3>" + totalweight + "/" + childCount + "</font></span></div>" , className: "marker-cluster" + c, iconSize: new L.Point(40, 40) });}});return cluster};;
+    //var cluster = L.markerClusterGroup();
+    var callback_marker = function (row) {icon = L.AwesomeMarkers.icon({icon: "bookmark", markerColor: "blue"});marker = L.marker(new L.LatLng(row[0], row[1]));popup = L.popup().setContent("<html><font size=3>"+row[2]+"位会员(曾）就读于"+row[3]+"</font></html>").openOn(marker);marker.bindPopup(popup);marker.setIcon(icon);return marker};;
+    var cluster = callback_cluster();
+    
+    for (var i = 0; i < data.length; i++) {
+        var row = data[i];
+        var marker = callback_marker(row);
+        //var cluster = callback_cluster(marker);
+        marker.addTo(cluster);
+    }
+
+    cluster.addTo(map);
+})();
+</script>

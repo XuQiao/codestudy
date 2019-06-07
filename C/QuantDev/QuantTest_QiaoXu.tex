@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{amsmath}
+
+\setlength{\droptitle}{-4cm}
+\title{
+Qishi Quant Study Group Test Submission}
+\author{Qiao Xu}
+\date{\today}
+\begin{document}
+\maketitle
+\section{Math Test 1}
+%\subsection{Method 1: from discrete case:}
+%If we have N coins and we want to separate them to two piles and multiply them. $x+y=N$. Then separate these smaller piles again, and so forth:
+%$Sum=xy+x_{1}x_{2}+y_{1}y_{2}+...$
+%We can prove this sum is independent of the method in each step, use induction:
+%Think each coin is connected by a 'string' to another, then we have $f(N) = 
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page1.jpg}
+\newpage
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page2.jpg}
+\newpage
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page3.jpg}
+\newpage
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page4.jpg}
+\newpage
+\section{Math Test 2}
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page5.jpg}
+\newpage
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page6.jpg}
+\newpage
+\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{page7.jpg}
+\newpage
+\section{Coding Test}
+\subsection{The codes and the results}
+The codes are zipped in the same directory, including: \newline
+$goog\_trade\_2.txt$  $->$ original input file \newline
+GenerateSample.py  $->$ python file to generate samples for analysis \newline
+StockData.h  $->$ Base functions \newline
+StockData.C  $->$ Base class source file \newline
+EstTimeLag.C $->$ source file \newline
+EstTimeLag  $->$  executable to get result \newline
+
+To generate exchange B mixed with A report data file, the command is:
+python3 GenerateSample.py goog\_trade\_2.txt 'None' 0.35 30 \newline
+'None' means there is no noise added, we can also choose 'Gaus' and 'Laplace' \newline
+0.35 means the fraction of exchange B \newline
+30 means the input lag(expected value) \newline
+
+The output is a txt file, which is also included int the zip:
+sampled\_None\_frac0.35\_lag30.txt \newline
+
+To analysis the data, we simply run:
+EstTimeLag sampled\_None\_frac0.35\_lag30.txt \newline
+and shows:
+B is lagged by 31ms using cross correlation\newline
+B is lagged by 31ms using least square\newline
+B is Actually lagged by 30ms\newline
+\newline
+Another example:
+EstTimeLag sampled\_None\_frac0.4\_lag-70.txt\newline
+B is lagged by -69ms using cross correlation\newline
+B is lagged by -69ms using least square\newline
+B is Actually lagged by -70ms\newline
+
+EstTimeLag sampled\_Laplace\_frac0.4\_lag50.txt\newline
+B is lagged by 51ms using cross correlation\newline
+B is lagged by 51ms using least square\newline
+B is Actually lagged by 50ms\newline
+
+In my code, I used two methods to get the desired lag time. First is the cross correlation method, in which we want to find the lag $\tau$ to maximize:
+\[
+Corr(A+\tau , B) = \frac{\Sigma{(A_{i+\tau} - \bar{A_{i+\tau}})}*\Sigma{(B_i - \bar{B}})}{Std(A)*Std(B)}
+\]
+The second is the maximum likelihood(Least Square) method, in which we want to minimize:
+\[
+\Sigma{(A_{i+\tau}-B_{i})^{2}}
+\]
+And I use the linear interpolation when I want to align them to the same time point.
+It appears that these two methods give the similar result. \newline
+The text files in the zips are all test case. \newline
+The files starts with *lagged* are the cross correlation values and square differences for each possibility of lagged time $\tau$.\newline
+The figures starts with *plotafter* are the time series plots for each case containing exchange A and B.\newline
+
+\subsection{Discussion}
+2.
+A is the major exchange, while B is the minor exchange. Trade price reported from B may correlate with the trade price reported from A. Please describe a framework to analyze such correlation (no coding needed).
+If price reported from B is possibility correlated with A, and B is a smaller dataset compared to A. We need to resample B to make the correlation unbiased. A moving average may help in this case. 
+Also we need some other indication variables to determinate the correlations besides the traditional cross correlations. F-statistics can also used in this case.
+
+3. The time lag and price correlation between exchanges are not uncommon in real trading. Think about how to avoid being taken advantage by other traders when you send out orders to multiple exchanges.
+If we find that there exist positive correlation between A and B exchange, we may want to hedge the risk causing by not short or long them at the same time. We must aware of the time lag in the market whatever caused by technical reasons or human, and a small lag may result in your slowness in the financial market.
+
+
+
+\end{document}

@@ -1,0 +1,13 @@
+add 1 B 45.2 100
+modify 1 50
+get price B 1 //this returns 45.2
+add 2 S 51.4 200
+add 3 B 45.1 100
+get size S 1 //this returns 200
+add 4 S 51.2 300
+add 5 S 51.2 200
+remove 3
+get price B 1 // this returns 45.2
+get size B 1 //this returns 50
+get price S 1//this returns 51.2
+get size S 1 //this returns 500

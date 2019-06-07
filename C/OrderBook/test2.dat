@@ -1,0 +1,23 @@
+add 1 B 22.5 100
+add 2 S 37.8 250
+add 3 B 24.7 150
+get price B 1 //this returns 24.7
+get price B 2 //this returns 22.5
+modify 3 50
+add 4 S 35.1 250
+add 5 S 37.8 150
+get price S 1//this returns 35.1
+remove 3
+get size S 1 //this returns 250
+get size S 2 //this returns 400.
+remove 5
+add 6 S 37.8 150
+add 7 S 37.6 350
+add 8 B 24.7 200
+get size B 1 //this returns 200
+get price S 2//this returns 37.6
+modify 8 150
+add 9 S 35.1 200
+add 10 B 22.5 350
+get size B 2 //this returns 450
+get price S 3//this returns 37.8

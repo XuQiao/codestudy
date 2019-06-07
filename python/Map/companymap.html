@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.2.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawgit.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <style>#map_9bb8486deb274ad6a0f0e2bf7ef9abbd {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>    
+    
+     <div style="position: fixed; 
+     bottom: 50px; left: 50px; width: 300px; height: 30px; 
+     border:2px solid grey; z-index:19999; font-size:14px;
+     background-color: yellow
+     "> <i> 1/1: # of Members / # of Companys </i>
+      </div>
+     
+    
+    <div class="folium-map" id="map_9bb8486deb274ad6a0f0e2bf7ef9abbd" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_9bb8486deb274ad6a0f0e2bf7ef9abbd = L.map(
+        'map_9bb8486deb274ad6a0f0e2bf7ef9abbd', {
+        center: [38.21965600633914, -41.5966495118859],
+        zoom: 2,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_50b0c9db94f947bcba230d3b99ee11e5 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "subdomains": "abc"
+}).addTo(map_9bb8486deb274ad6a0f0e2bf7ef9abbd);
+    
+(function(){
+    var data = [[40.75471719999999, -73.98277449999998, 1, 'Camellia Venture Capital LLC'], [40.7127753, -74.0059728, 14, 'StoneCastle Cash Management'], [41.0210433, -73.6256458, 5, 'AQR Capital Management'], [40.8642635, -72.87516839999998, 3, 'Brookhaven National Laboratory'], [37.48164010000001, -122.1556126, 5, 'Facebook Way'], [41.88125520000001, -87.6372287, 2, 'CME Group'], [40.767418, -73.987959, 1, 'Clinilabs'], [42.356958, -71.05397599999998, 1, 'Acadian Asset Management'], [40.7127753, -74.0059728, 1, 'Kaggle'], [40.7521163, -73.9823818, 1, 'HSBC'], [40.743298, -73.98640700000001, 1, 'Haven Life'], [22.543096, 114.057865, 1, '立信国际工程咨询有限公司深圳分公司'], [29.1416432, 119.7889248, 1, 'FLASH KICK IN CONSULTING INC'], [40.7560396, -73.97627790000001, 17, 'J.P. Morgan'], [35.44926820000001, -80.60803879999997, 1, 'Choice Hotels International'], [40.76434329999999, -73.97674560000002, 2, 'Hedge Fund'], [40.7805692, -74.1330442, 2, 'KCG Holdings'], [37.3295584, -122.025002, 1, 'Apple Tree Lane'], [40.7620051, -73.96800759999998, 6, 'Bloomberg Tower'], [37.7808162, -122.3956663, 2, 'Insight Data Science'], [40.7127753, -74.0059728, 1, 'stat arb quant fund'], [39.7494866, -104.99483390000002, 1, 'Guzman Energy LLC'], [40.7233424, -74.0043514, 4, 'Two Sigma Securities'], [42.4072107, -71.3824374, 1, 'Ant Financial'], [40.7127753, -74.0059728, 1, 'NYC-Based Multi-Strategy Hedge Fund'], [40.749901, -73.98979, 1, 'RiskVal'], [40.8086876, -74.09619119999998, 4, 'Citigroup'], [25.750813, -80.25697459999998, 1, 'Guzman Energy'], [37.78853400000001, -122.395069, 1, 'Opendoor'], [42.360091, -71.09416, 1, 'Massachusetts Institute of Technology'], [40.7546943, -73.984489, 1, 'Salesforce'], [40.759643200000006, -73.9745525, 3, 'Cubist Systematic Strategies'], [23.3790333, 113.7632828, 1, 'MyCapital'], [40.7536976, -73.98596640000002, 2, 'Applied Academics LLC'], [46.3449532, -119.2795623, 1, 'Pacific Northwest National Laboratory - PNNL'], [47.6150154, -122.33839, 2, 'Amazon - Doppler'], [40.7537571, -73.97834379999998, 1, 'Willis Towers Watson'], [40.72601179999999, -74.03574990000001, 1, 'RBS'], [37.7877624, -122.3969123, 3, 'Google Developers Launchpad Space'], [40.758464, -73.98180599999998, 4, 'Wells Fargo Advisors'], [40.7127753, -74.0059728, 1, 'Qishi Career Path Club'], [40.7554945, -73.98477299999998, 3, 'Bank of America Merrill Lynch'], [40.7570652, -73.9822073, 3, 'The D. E. Shaw Group'], [41.2169961, -73.8072718, 1, 'IBM Thomas J. Watson Research Center'], [35.86166, 104.195397, 1, 'Baidu'], [40.70749989999999, -74.0097459, 1, 'GS'], [41.877431, -87.62565699999998, 1, 'Akuna Capital'], [40.734614, -73.991079, 7, 'Capital One'], [39.9206294, 116.3581299, 3, 'UBS Securities Co.'], [37.7370036, -122.45712140000002, 1, 'Robinhood'], [40.7237126, -73.9980478, 1, 'Afingo None'], [39.90419989999999, 116.4073963, 1, 'CreditEase Wealth Management (Beijing) Co.'], [40.7599978, -73.98543169999998, 11, 'Morgan Stanley Global Headquarters'], [40.323199, -74.63617789999998, 1, 'A Hedge Fund'], [37.77131660000001, -122.4144939, 1, 'Wish'], [40.762881, -73.98249899999998, 3, 'Three Bridges Capital'], [31.2303904, 121.4737021, 1, 'GfK'], [40.749901, -73.98979, 1, 'RiskVal Financial Solutions Llc'], [40.753575700000006, -73.9720253, 1, 'Haitou Global'], [40.1019523, -88.2271615, 1, 'UIUC'], [47.65533509999999, -122.3035199, 1, 'HBO'], [40.7593019, -73.9718075, 2, 'PineBridge Investments'], [40.7127753, -74.0059728, 4, 'Epim Network'], [40.7554089, -73.9746353, 2, 'JRI America Inc.'], [37.09024, -95.712891, 1, 'Weld Capital Management LLC'], [40.845436600000006, -73.1731358, 2, 'JPMorgan Chase'], [40.73962849999999, -73.99407200000002, 1, 'Spotify'], [40.7134455, -74.01527209999998, 2, 'American Express Co'], [37.7898532, -122.3899856, 2, 'Google'], [39.90419989999999, 116.4073963, 1, 'JP Morgan QR Beijing Center'], [31.2303904, 121.4737021, 1, 'A fund'], [33.6201459, -117.8744567, 1, 'Pacific Investment Management Co Llc'], [40.7603369, -73.9744177, 1, 'Jefferies'], [40.7510922, -73.9835867, 1, 'Grubhub'], [40.7559391, -73.9875181, 2, 'EY'], [37.87159260000001, -122.272747, 1, 'Berkeley Brothers'], [51.4513971, -2.5955536, 1, 'KPMG'], [40.80963670000001, -73.51031739999998, 1, 'Beijing House Restaurant'], [39.768403, -86.158068, 1, 'Indianapolis'], [30.272577, 120.125781, 1, 'Ant Financial'], [30.6006773, 117.9249002, 1, 'Anhui'], [40.833578, -73.85891219999998, 3, 'Greater Dental'], [38.9049458, -77.06043659999997, 1, 'Amazon Books'], [22.536812, 114.022678, 1, 'China International Capital Co.'], [40.7618736, -73.982224, 2, 'SAS Institute Inc'], [42.4072107, -71.3824374, 1, 'Massachusetts'], [39.9516506, -75.15267829999998, 1, 'BNY Mellon'], [41.5823318, -83.6774141, 1, 'Polaris Investments LLC'], [40.7103025, -74.0119725, 1, 'MediaMath'], [37.09024, -95.712891, 1, 'Helios Data Inc.'], [33.90888220000001, -84.43074879999998, 1, 'Intercontinental Exchange'], [40.7434001, -74.0079724, 5, 'Google'], [47.6062095, -122.33207079999998, 1, 'Oliver Wyman'], [14.828868099999998, 120.2871438, 1, 'hxams tailoring'], [41.0543459, -73.5351908, 1, "O'Shaughnessy Asset Management"], [40.7876152, -73.9783358, 2, 'limo rest'], [35.86166, 104.195397, 1, 'Guorong Sequrity'], [41.8822346, -87.64167169999996, 1, 'DRW'], [37.7920903, -122.4036761, 1, 'McKinsey & Company'], [40.7551232, -73.9813453, 1, 'The man'], [26.1890703, -80.16290040000001, 3, 'Citi'], [40.7603744, -73.976677, 4, 'Millennium Management Llc'], [40.714828, -74.0144025, 8, 'Goldman Sachs'], [40.712449, -74.00829300000002, 1, 'Portware'], [31.887144800000005, 117.2930317, 1, 'China'], [31.2580449, 121.482969, 1, '京东集团'], [40.7580347, -73.9696273, 1, 'QS Investors'], [47.6062095, -122.33207079999998, 1, 'American Express'], [41.875557, -87.63186280000002, 1, 'Chicago Trading Company'], [25.126246, 113.354776, 1, 'Essence Securities Co.'], [40.85741549999999, -74.41271780000002, 1, 'ADP Parsippany'], [34.09635000000001, -118.308752, 1, 'Zestfinance'], [34.016296600000004, -118.4534959, 1, 'Snapchat'], [41.878535, -87.63194, 1, 'Eagle Market Makers Inc'], [41.1729996, -73.3639551, 1, 'Bridgewater Associates'], [40.3229254, -74.64512739999998, 1, 'Scoville Risk Partners'], [22.281072, 114.155313, 1, 'Etiger Capital'], [35.232036, -82.7218819, 1, 'Haitong Securities'], [30.262739, 120.2077193, 1, 'Citibank'], [40.7467775, -73.97222649999998, 1, 'NYU Langone Orthopedic Center'], [31.288594, 121.444674, 1, '上海市建筑装饰工程集团有限公司'], [40.7538467, -73.985507, 1, 'Trumid'], [43.6503384, -79.3807861, 1, 'Barclays'], [32.756332, -97.331859, 1, 'Wells Fargo Securities'], [36.778261, -119.4179324, 2, 'California'], [41.8076003, -88.06849840000002, 1, 'NAG (Numerical Algorithms Group)'], [35.2235104, -80.84417950000002, 1, 'Wells Fargo Advisors'], [40.7545285, -73.82758749999998, 1, 'Bank of China'], [22.27954, 114.160529, 1, 'Goldman Sachs (Asia) LLC'], [41.0288305, -73.6266923, 1, 'Aristeia Capital LLC'], [40.7127753, -74.0059728, 1, 'Prismark'], [40.70789310000001, -74.0111749, 1, "Moody's Analytics"], [40.65627449999999, -73.58157179999998, 1, 'Citadel Securities Corporation'], [31.2223893, 121.5039432, 1, 'Shanghai Fosun Medical Company （Group） Company Limited'], [39.873988, 116.456879, 1, 'Pediatric Prevention Research Center'], [40.0583238, -74.40566120000003, 2, 'New Jersey'], [40.738825, -73.99386100000002, 1, 'Kinnek'], [40.7502091, -73.98427729999999, 1, 'Selerity Inc'], [36.8622395, 42.95858079999999, 1, 'Company Chinar'], [22.281256, 114.158947, 1, 'PwC Hong Kong and Mainland China'], [40.7532782, -73.99887559999998, 2, 'Amazon'], [28.2292794, -80.7025781, 1, 'JAG Financial'], [31.2261122, 121.47269140000002, 1, 'Shanghai Investment Consulting Corporation'], [33.6635364, -117.8642678, 1, 'Glidewell Dental'], [37.7126227, -122.4462535, 1, 'Ellington Avenue'], [34.5199402, -105.87009009999998, 1, 'New Mexico'], [41.48373369999999, -81.7025401, 1, 'KeyBank'], [39.90419989999999, 116.4073963, 1, '北京坤利资产管理有限公司'], [40.7503566, -73.9784425, 1, 'Numerix'], [40.7127753, -74.0059728, 1, 'AVID Technologies'], [42.210664, -83.148349, 1, 'Select Specialty Hospital - Downriver'], [39.9036804, 116.3185785, 1, 'State Administration of Taxation'], [37.4219999, -122.0840575, 1, 'Google'], [29.7465684, -95.3600606, 1, 'Shell'], [38.6317842, -90.2164111, 1, 'Wells Fargo '], [40.8540132, -73.18691820000002, 1, 'Bank of America Financial Center'], [42.36254479999999, -71.0967908, 1, 'State Street'], [42.3537523, -71.0574647, 1, 'Bloomberg LLP'], [40.7605401, -73.98290999999998, 1, 'Barclays Corporate Office'], [41.8697938, -87.64963359999999, 1, 'Univ of illinois at chicago'], [40.7592344, -73.9735446, 1, 'Evercore'], [39.95254329999999, -75.1564566, 1, 'Citi'], [29.739336, -95.48216, 1, 'Sfile Technology Corporation'], [38.8997145, -77.04859920000001, 1, 'Bayview Asset Management'], [33.7818061, -84.3871267, 1, 'Google Atlanta'], [34.0934705, -118.3447534, 1, 'Wells Fargo Bank'], [41.54263020000001, -73.82563619999998, 1, 'Globalfoundries'], [40.7414538, -73.98653689999998, 1, 'Credit Suisse'], [42.3600709, -71.0588305, 1, 'Greater Boston'], [40.521775, -74.4622565, 1, 'Dept. of Mathematics'], [40.753328, -73.97940200000002, 1, 'Guggenheim Partners'], [39.984827300000006, 116.3265055, 1, 'Google Beijing'], [38.90050460000001, -77.0384718, 1, 'Alliance Bernstein'], [40.7556629, -73.9735276, 1, 'InterContinental New York Barclay'], [40.7592738, -73.24311089999998, 1, 'Rhode Island Avenue'], [41.325291, -74.79984300000002, 1, 'Penn State Extension'], [37.7890067, -122.3961388, 1, 'BlackRock'], [47.664129900000006, -122.2991932, 2, 'Microsoft'], [37.09024, -95.712891, 1, 'United States'], [40.7551232, -73.9813453, 1, '7element inc'], [35.86166, 104.195397, 1, 'ShenYi investing'], [37.3552597, -121.9059361, 1, 'Facebook'], [40.7127753, -74.0059728, 1, 'Vatic Labs (New York & San Francisco)'], [38.90297810000001, -77.02557990000003, 1, 'Microsoft'], [42.926113, -89.38210699999998, 1, 'Oregon Area Senior Center'], [40.7533761, -73.99919279999997, 1, 'Markit'], [22.282285100000006, 114.1615922, 1, 'Hong Kong City Hall'], [39.94212260000001, 116.4706491, 1, 'Muji'], [39.2871826, -76.60819509999997, 1, 'UBS Financial Services Inc.'], [37.09024, -95.712891, 1, 'Flash Kick In'], [40.860468, -74.05071099999998, 1, 'Raytheon'], [41.2476496, -76.99522940000001, 1, 'Shopee'], [40.7509446, -73.97386879999998, 1, 'Financial Research Firm'], [41.72334499999999, -73.242021, 1, 'Jinjing Trading Co.'], [37.38739, -121.9713367, 1, 'BitTiger'], [40.433809, -80.00597859999998, 1, 'BNY Mellon'], [40.7127753, -74.0059728, 1, 'Iyka Trade'], [32.6883037, -97.4023783, 1, 'UPS Capital'], [40.7635843, -73.9723967, 1, 'Engineers Gate'], [37.6298171, -122.42073059999998, 1, 'Walmart Labs'], [34.24801779999999, 108.9464009, 1, 'HSBC （China）'], [31.9685988, -99.9018131, 1, 'Roscommon Analytics LLC'], [40.6925471, -73.99241070000002, 1, 'The Packer Collegiate Institute'], [40.7854012, -74.13543469999998, 1, 'M & R Liquors'], [37.4418834, -122.1430195, 1, 'LVIS Corporation'], [40.75833069999999, -73.97371869999998, 1, 'Marshall Wace North America LP'], [40.7455363, -73.98268440000002, 1, 'Priceline.com'], [40.6245365, -73.9971582, 1, 'Greater New York Nursing'], [40.7536713, -73.99549240000002, 1, 'Pitney Bowes'], [40.7127753, -74.0059728, 1, 'Refinitiv'], [40.7127753, -74.0059728, 1, 'Namei Group Inc.'], [41.8789094, -87.63722320000002, 1, 'CloudQuant']];
+    var map = map_9bb8486deb274ad6a0f0e2bf7ef9abbd;
+    var callback_cluster = function () {var cluster = L.markerClusterGroup({iconCreateFunction: function(cluster) {var childCount = cluster.getChildCount();var allchildmarkers = cluster.getAllChildMarkers();var totalweight = 0;for (var i = 0; i < childCount; i++) {var popup = allchildmarkers[i].getPopup();totalweight += parseInt(popup.getContent().substr(19));}var c = " marker-cluster-";if (childCount < 10) {c += "small";} else if (childCount < 100) {c += "medium";} else {c += "large";};return new L.DivIcon({ html: "<div><span><font size=3>" + totalweight + "/" + childCount + "</font></span></div>" , className: "marker-cluster" + c, iconSize: new L.Point(40, 40) });}});return cluster};;
+    //var cluster = L.markerClusterGroup();
+    var callback_marker = function (row) {icon = L.AwesomeMarkers.icon({icon: "star", markerColor: "blue"});marker = L.marker(new L.LatLng(row[0], row[1]));popup = L.popup().setContent("<html><font size=3>"+row[2]+"位会员现就职于"+row[3]+"</font></html>").openOn(marker);marker.bindPopup(popup);marker.setIcon(icon);return marker};;
+    var cluster = callback_cluster();
+    
+    for (var i = 0; i < data.length; i++) {
+        var row = data[i];
+        var marker = callback_marker(row);
+        //var cluster = callback_cluster(marker);
+        marker.addTo(cluster);
+    }
+
+    cluster.addTo(map);
+})();
+</script>

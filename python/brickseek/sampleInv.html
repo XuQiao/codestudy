@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE 7]>					<html class="ie7 no-js" lang="en">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie no-js" lang="en">
+<!--<![endif]-->
+<head>
+
+<!-- Basic Page Needs
+  ================================================== -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--[if ie]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+
+<title>Walmart Inventory Checker</title>
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+  ================================================== -->
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/colors/blue.css" id="colors" />
+<link rel="stylesheet" href="/css/skeleton.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/font-awesome.css" />
+<link rel="stylesheet" href="/js/mediaelement/jquery.mediaelementplayer.css" />
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" />
+<style>
+   tr.border_bottom td { 
+  border-bottom:1pt solid lightgray;
+  
+  
+}
+ </style>
+<!-- HTML5 Shiv
+	================================================== -->
+
+<script src="/js/jquery.modernizr.js"></script>
+</head>
+<body class="wide color pattern-1">
+<div id="wrapper">
+	<link rel="stylesheet" type="text/css" href="/search/css/style.css" />
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="/search/js/script.js"></script>
+                <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55274071-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+<header id="header">
+		<div class="container">   
+			<div class="eight columns">    
+			<div id="logo">
+                               </div>	
+			</div>
+			<div class="eight columns">
+				<div class="widget widget_contacts">
+					<ul class="social-icons">
+						<li class="twitter"><a href="https://twitter.com/BrickSeek">Twitter</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/brickseek">Facebook</a></li>
+					</ul>
+				</div>
+                            <br />          
+			</div>
+			<div class="clear"></div>
+			<div class="sixteen columns">
+				<div class="menu-container clearfix">
+					<nav id="navigation" class="navigation clearfix">
+						<div class="menu">
+							<ul>
+								<li><a href="/">Home</a></li>
+
+		<li><a href="/c/">Blog</a></li>
+
+								<li><a href="#">Deals</a>
+									<ul><li><a href="/clearance/deals/all/">Clearance Finder</a></li>
+										<li><a href="/cartwheel/">Cartwheel App</a></li>
+
+									</ul>
+								</li>
+
+
+                                                                <li><a href="/sets/browse/">Widgets</a>
+                                                                    <ul><li><a href="/sets/price_change">Recent Price Changes</a></li>
+                                                                <li><a href="/sets/stock_change">Recent Stock Changes</a></li>
+																		<li><a href="/user/subscription_alerts">Local Inventory Email Alerts</a></li>
+                                                                <li><a href="http://brickseek.com/target-inventory-checker">Target Inventory Checker</a></li>
+                                                                <li><a href="http://brickseek.com/walmart-inventory-checker">Walmart Inventory Check</a></li>
+																<li><a href="/inventory-check/cvs">CVS Inventory Check</a></li>
+																<li><a href="/inventory-check/homedepot">Home Depot Inventory Check</a></li>
+																		<li><a href="/inventory-check/lowes">Lowes Inventory Check</a></li>
+																		<li><a href="/inventory-check/officedepot">Office Depot Inventory Check</a></li>
+																		<li><a href="/inventory-check/staples">Staples Inventory Check</a></li>
+																	</ul>
+                                                                </li>
+								<li><a href="/sets/browse/">Find a LEGO&reg; Set</a></li>
+								<li><a href="/about">About Us</a></li>
+                                                                <li><a href="/user">My Account</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div class="searcwrapper">	
+					</div>
+				</div>
+			</div>
+                </div>	
+	</header>
+               
+	
+	
+	<section id="content" class="sbl">
+              
+		<div class="menu-shadow"></div>
+		<div class="container clearfix">
+                    
+			<div style="" class="page-header clearfix">
+                         
+	<link rel="stylesheet" type="text/css" href="/search/css/style.css" />
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="/search/js/script.js"></script>
+                <div style='width:100%'>
+<div  style='margin-left: auto; margin-right: auto; width: 393px;'>
+	<form id="searchform">
+	<div style='position:relative'>	
+            <div>
+                <label><input type="text" placeholder="Search" size="30" value="" id="inputString" onkeyup="lookup(this.value);" /></label>
+	 <img src='/search-icon.png' style='width: 38px; margin-left: -2px; vertical-align: bottom'>	
+            </div>
+            
+            <div id="suggestions" style=" position: absolute; overflow: visible; z-index: 111"></div>
+        </div>
+        </form>
+</div>
+                   
+                </div>
+
+
+				<h1>Walmart Inventory Checker</h1>
+				<div class="line"></div>
+			</div>
+			<!--/ .page-header-->
+                    
+			<section id="main" class="twelve columns" style='margin-top:-15px'>
+				<div style='width:600px'><form method='post'>Zip Code: <input style='width:150px' name='zip' value='11784' type='text'>  Item Id: <input style='width:150px' value='9914706' name='item_id' type='text'> <input style='-webkit-appearance: none;' type='submit'></form></div><br /><div style="margin-top:0px; margin-left:00px"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- stock-banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-1871146788406782"
+     data-ad-slot="9194150090"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div><br/><div style='width:600px'><b>*</b> Please note, the following data obtained from Walmart's Inventory System. Inventory systems can be wrong on occasion, while we query their system realtime, the Walmart inventory sytem can be delayed 12-24 Hours Use the information below at your own risk!</div> <br/><div style='float:left'><img src='https://i.walmartimages.com/i/p/00/01/82/08/02/0001820802166_215X215.jpg' style='height:75px;'></div><div style='float:left; width:450px; padding-left:10px; padding-top:15px'> <a style='font-size:140%';>Nikon Nikkor 55-200mm Zoom Lens features VR Image Stabilization, f/4-5.6G, IF-ED, AF-S, DX (#2166)</a></div><br /><table style='width:500px'><tr><td style=''><b>Walmart #3803</b><br>515 Saw Mill Rd<br>West Haven CT 06516<br>(203) 931-2081<br />28.11 Miles</td><td><a style='font-size:18px'>$     25.00</a><br/><a style='color:red'>Out of Stock</a><br /><b>Est Qty in Stock</b>: 0</td></tr><tr><td style=''><b>Walmart #3547</b><br>680 Connecticut Ave<br>Norwalk CT 06854<br>(203) 854-5236<br />32.28 Miles</td><td><a style='font-size:18px'>$     25.00</a><br/><a style='color:red'>Out of Stock</a><br /><b>Est Qty in Stock</b>: 0</td></tr></table>			</section>
+			<!--/ #main-->
+			
+			<aside id="sidebar" class="four columns">
+							
+<div style="margin-left: -20px; margin-top: 0px;">
+	<a href="https://m.facebook.com/groups/901406749969948?tsid=0.2706692919600755"><img src="/img/prime-day.jpg" style="border: solid 1px grey"></a>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- smaller side -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-1871146788406782"
+     data-ad-slot="1249067693"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
+<!--    <h6>Pre-order New LEGO Disney</h6>
+    <a href="http://www.amazon.com/gp/product/B00NHQGALC/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NHQGALC&linkCode=as2&tag=bric015-20&linkId=BPSSYGHA7NHQMSQR"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00NHQGALC&Format=_SL110_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=bric015-20" ><img src="http://ir-na.amazon-adsystem.com/e/ir?t=bric015-20&l=as2&o=1&a=B00NHQGALC" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+    <br /><b>Ariel's Undersea Palace</b></a><br /><br />
+    <a href="http://www.amazon.com/gp/product/B00NHQGE54/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00NHQGE54&linkCode=as2&tag=bric015-20&linkId=BZVVN2X4DIJQKL4P"><img border="0" src="http://ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B00NHQGE54&Format=_SL110_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=bric015-20" ><br /><b>Sleeping Beauty's Royal Bedroom</b></a><br /><br /></a><img src="http://ir-na.amazon-adsystem.com/e/ir?t=bric015-20&l=as2&o=1&a=B00NHQGE54" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />-->
+
+                                </div>
+<div style="margin-top: 0px;" class="widget widget_categories">
+					<h3 class="widget-title"><b>Popular Themes</b></h3>
+					<ul>
+						<li> <a href="/sets/browse/architecture" alt="Architecture">Architecture</a></li>
+                                                <li> <a href="/sets/browse/DC-Comics-Super-Heroes" alt="DC Comics Super Heroes">DC Comics Super Heroes</a></li>
+						<li> <a href="/sets/browse/Advanced-Models" alt="Exclusives">Exclusives</a></li>
+                                                <li> <a href="/sets/browse/Friends" alt="Friends">Friends</a> </li>
+                                                <li> <a href="/sets/browse/Marvel-Super-Heroes" alt="Marvel Super Heroes">Marvel Super Heroes</a></li>
+						<li> <a href="/sets/browse/Ninjago" alt="Ninjago">Ninjago</a></li>
+						<li> <a href="/sets/browse/Star-Wars" alt="Star Wars">Star Wars</a></li>
+					</ul>				</div>
+	
+				<!--/ .widget-->
+                                
+                                <div class="widget widget_popular_posts">
+					<h3 class="widget-title"><b>Recently Reported In Stock</b></h3>
+					<ul class="clearfix">
+						<li>
+							<div class='preloaer'> <a href='/sets/i/lego-movie-bad-cop-car-chase-70819/904.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-movie-bad-cop-car-chase-70819/904'>
+								<h8>LEGO Movie Bad Cop Car Chase (70819)</h8>
+								</a><span style='color:green; font-size:120%'>$29.99</span> @Target </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-architecture-trevi-fountain-21020/370.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-architecture-trevi-fountain-21020/370'>
+								<h8>LEGO&reg; Architecture Trevi Fountain (21020)</h8>
+								</a><span style='color:green; font-size:120%'>$46.99</span> @Target </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-city-trains-cargo-train/233.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-city-trains-cargo-train/233'>
+								<h8>LEGO&reg; City Trains Cargo Train</h8>
+								</a><span style='color:green; font-size:120%'>$135.99</span> @Target </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-super-heroes-attack-on-avengers-tower-76038/1016.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-super-heroes-attack-on-avengers-tower-76038/1016'>
+								<h8>LEGO Super Heroes Attack on Avengers Tower 76038</h8>
+								</a><span style='color:green; font-size:120%'>$51.99</span> @Walmart </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-classic-creative-bricks-10692/901.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-classic-creative-bricks-10692/901'>
+								<h8>LEGO Classic Creative Bricks (10692)</h8>
+								</a><span style='color:green; font-size:120%'>$11.99</span> @Walmart </div>
+							<!--/ .post-holder--> 
+						</li>					</ul>
+                                         <hr>
+				</div>
+                              
+				<div class="widget widget_popular_posts">
+					<h3 class="widget-title"><b>Recent Price Reductions</b></h3>
+					<ul class="clearfix">
+						<li>
+							<div class='preloaer'> <a href='/sets/i/lego-star-wars-snowspeeder-75074/899.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-star-wars-snowspeeder-75074/899'>
+								<h8>LEGO Star Wars Snowspeeder (75074)</h8>
+								</a><span style='color:green; font-size:120%'>$8.49</span> </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-mindstorms-ev3-building-set/81.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-mindstorms-ev3-building-set/81'>
+								<h8>LEGO&reg; MINDSTORMS EV3 Building Set</h8>
+								</a><span style='color:green; font-size:120%'>$189.99</span> </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-technic-quad-bike-42034/846.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-technic-quad-bike-42034/846'>
+								<h8>LEGO Technic Quad Bike (42034)</h8>
+								</a><span style='color:green; font-size:120%'>$17.49</span> </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-creator-vehicle-transporter-31033/843.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-creator-vehicle-transporter-31033/843'>
+								<h8>LEGO Creator Vehicle Transporter (31033)</h8>
+								</a><span style='color:green; font-size:120%'>$18.49</span> </div>
+							<!--/ .post-holder--> 
+						</li><li>
+							<div class='preloaer'> <a href='/sets/i/lego-creator-blue-racer-31027/853.' class='bwWrapper'> 
+                                                            
+							<div class='post-holder'> <a href='/sets/i/lego-creator-blue-racer-31027/853'>
+								<h8>LEGO Creator Blue Racer (31027)</h8>
+								</a><span style='color:green; font-size:120%'>$4.8</span> </div>
+							<!--/ .post-holder--> 
+						</li>					</ul>
+                                         <hr>
+				</div>
+                                
+				
+			</aside>
+			<!--/ #sidebar--> 
+			
+		</div>
+		<!--/ .container--> 
+		
+	</section>
+	<!--/ #content-->
+	
+	<footer id="footer">
+		
+            
+<div class="container">
+			<div class="four columns">
+				<div class="widget widget_recent_entries">
+					
+				</div>
+			</div>
+			<div class="four columns">
+				<div class="widget widget_social">
+					<h3 class="widget-title">Social Links</h3>
+					<ul class="social-icons clearfix">
+		
+						<li class="twitter"><a href="https://twitter.com/BrickSeek">Twitter</a></li>
+						<li class="facebook"><a href="https://www.facebook.com/brickseek">Facebook</a></li>
+					</ul>
+					<!--/ .social-list--> 
+					
+				</div>
+				
+				
+			</div>
+			
+			
+			<div class="four columns">
+                            <h3 class="widget-title">Disclaimer</h3>
+				LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site
+				
+				
+			</div>
+			
+			
+			<div class="four columns">
+				<div class="widget widget_text">
+					<h3 class="widget-title">About Us</h3>
+					<div class="textwidget">
+						<p> BrickSeek is dedicated to helping you find that special Lego set for a great price. Set up text and email alerts for those hard to find Lego sets! </p>
+					
+						<ul class="address-info">
+							<li><i class="fa fa-envelope-o"></i> Email: <span class="contact-info"><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="cbb8bebbbba4b9bf8ba9b9a2a8a0b8aeaea0e5a8a4a6">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></span></li>
+						</ul>
+					</div>
+					
+					
+				</div>
+				<!--/ .widget --> 
+				
+			</div>
+			<!--/ .columns -->
+			
+			<div class="clear"></div>
+			<div class="sixteen columns">
+				<div class="adjective clearfix">
+					<div class="copyright" >Copyright 2014 BrickSeek | All Rights Reserved</div>
+					<div class="footer-bottom-right"></div>
+				</div>
+				
+				
+			</div>
+			
+			
+		</div>
+		
+		
+
+		
+	</footer>
+	<!--/ #footer --> 
+	
+</div>
+<!--/ #wrapper--> 
+
+<script src="/js/jquery-1.8.3.min.js"></script>  
+<script src="/js/jquery.easing.1.3.min.js"></script> 
+<script src="/js/jquery.cycle.all.min.js"></script> 
+<script src="/js/jquery.blackandwhite.min.js"></script> 
+<script src="/js/jquery.jflickrfeed.min.js"></script> 
+<script src="/js/fancybox/jquery.fancybox.pack.js"></script> 
+<script src="/js/mediaelement/mediaelement-and-player.min.js"></script> 
+<script src="/js/jquery.touchswipe.min.js"></script> 
+<script src="/js/jquery.easy-pie-chart.js"></script> 
+<script src="/js/config.js"></script> 
+<script src="/js/custom.js"></script> 
+  
+</body>
+</html>
+
